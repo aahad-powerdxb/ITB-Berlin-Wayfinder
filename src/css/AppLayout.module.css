@@ -1,0 +1,215 @@
+@media (orientation: landscape) {
+  .main-container {
+    font-family: "AbuDhabiBasis-Regular";
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .top {
+    max-width: 100vw;
+    height: 100vh; /* Fill screen */
+    position: absolute; /* Take out of flow to be true background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; /* Behind everything */
+  }
+
+  .bgLandscape {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .bgPortrait {
+    display: none;
+  }
+
+  .top-container {
+    position: absolute;
+    top: 8%;
+    left: 39%;
+  }
+
+  .text-container {
+    align-self: end;
+  }
+
+  .text-container p {
+    font-family: "AbuDhabiBasis-Bold";
+    color: #fcefde;
+    font-size: 3vw;
+  }
+
+  .bottom-container {
+    width: var(--content-width, 85vw); /* Use calculated width */
+    height: 48vw;
+    top: 10%;
+    left: 0;
+    padding: 2vw;
+    position: absolute;
+    font-size: 0.885vw;
+    letter-spacing: 0.02vw;
+    box-sizing: border-box;
+    z-index: 2;
+    opacity: 0; /* Start transparent */
+    transition: opacity var(--content-transition-duration, 400ms)
+      ease-in-out; /* Add transition */
+  }
+
+  .contentVisible {
+    opacity: 1; /* Class to make content visible */
+  }
+
+  /* Define classes here to ensure export */
+  .content-transitioning {}
+  .video-wrapper {}
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Landscape: Video Wrapper positions the box */
+  .video-wrapper {
+    position: absolute;
+    /* Coordinates derived from previous DetailView layout */
+    top: 11.4vw; 
+    left: 25vw;
+    width: 30vw;
+    min-width: 30vw;
+    height: 30vh;
+    border-radius: 2vw;
+    z-index: 5; /* Ensure it sits on top */
+    pointer-events: none; /* Let clicks pass through if needed */
+    
+    background-color: #fcefde;
+    border: 0.5vw solid #fcefde;
+    color: #fcefde;
+    
+    /* Enable fade out for the wrapper itself */
+    transition: opacity var(--content-transition-duration, 400ms) ease;
+  }
+
+  /* Inner Global Video handles content and fading */
+  .global-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5vw; /* Match parent minus padding if any */
+    
+    /* Handle Fade Out via Transition */
+    transition: opacity var(--content-transition-duration, 400ms) ease;
+    
+    /* Handle Fade In via Animation (runs on mount) */
+    animation: fadeIn var(--content-transition-duration, 400ms) ease-out;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .global-video video, .global-video img {
+    border-radius: 1.5vw;
+  }
+
+  .hidden-in-landscape {
+    opacity: 0;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* Fallback */
+  }
+
+  /* Portrait: Video Wrapper is fixed at the bottom */
+  .video-wrapper {
+    position: fixed;
+    bottom: 3vh;
+    left: 9.5vw;
+    width: 75vw;
+    height: 25vh; /* Adjust height as needed */
+    z-index: 10;
+
+    background-color: #fcefde;
+    border: 0.9vw solid #fcefde;
+    border-radius: 2vw;
+    color: #fcefde;
+  }
+
+  /* Inner Global Video handles content size and fading */
+  .global-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.5vw; /* Slightly smaller radius for inner content */
+    
+    /* Ensure opacity transition applies to this container */
+    transition: opacity var(--content-transition-duration, 400ms) ease;
+    
+    opacity: 1;
+  }
+
+  /* Fade out INNER content during page transition in portrait */
+  /* The wrapper stays visible (bg color), only the video fades */
+  .content-transitioning {
+    opacity: 0;
+  }
+
+  .global-video video, .global-video img {
+    border-radius: 1.5vw;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* In portrait, "hidden-in-landscape" class has no effect,
+     so the video remains visible in Directory mode. */
+  .hidden-in-landscape {
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+  
+  .bottom-container {
+    width: 95vw; /* Wider container */
+    height: 20vh; /* Restricted height between Map and Video */
+    top: 20%; /* Start below the map */
+    left: 6vw; /* Centered-ish */
+    position: absolute;
+    font-size: 1.5vw; /* Larger text for portrait */
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--content-transition-duration, 400ms) ease-in-out;
+    color: #fcefde;
+  }
+
+  .contentVisible {
+    opacity: 1;
+  }
+
+  .bgLandscape {
+    display: none;
+  }
+
+  .bgPortrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fit to screen */
+  }
+}
+

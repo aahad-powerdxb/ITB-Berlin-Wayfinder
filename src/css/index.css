@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "AbuDhabiBasis-Bold";
+  src: url("/assets/fonts/abudhabibasis-bold-webfont.woff") format("woff"),
+    url("/assets/fonts/abudhabibasis-bold-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "AbuDhabiBasis-Light";
+  src: url("/assets/fonts/abudhabibasis-light-webfont.woff") format("woff"),
+    url("/assets/fonts/abudhabibasis-light-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "AbuDhabiBasis-Regular";
+  src: url("/assets/fonts/abudhabibasis-regular-webfont.woff") format("woff"),
+    url("/assets/fonts/abudhabibasis-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "AbuDhabiBasis-Medium";
+  src: url("/assets/fonts/abudhabibasis-medium-webfont.woff") format("woff"),
+    url("/assets/fonts/abudhabibasis-medium-webfont.woff2") format("woff2");
+}
+
+body {
+  font-family: "AbuDhabiBasis-Regular";
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+

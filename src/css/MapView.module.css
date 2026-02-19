@@ -1,0 +1,136 @@
+@media (orientation: landscape) {
+  .map-container {
+    position: fixed;
+    right: 0%;
+    bottom: 1%; /* Anchor to bottom */
+    top: auto;  /* Override previous top positioning */
+    z-index: 1;
+    display: flex; /* Use Flexbox for side-by-side layout */
+    align-items: flex-end; /* Align bottoms */
+    gap: var(--map-gap, 1vw); /* Space between the two maps */
+    margin-right: var(--map-right-margin, 0); /* Optional right margin if needed by layout */
+  }
+
+  .mapImage {
+    /* Base styles for images */
+    height: auto;
+    width: auto;
+    pointer-events: none;
+    /* Opacity is controlled by the .visible class */
+    opacity: 0;
+  }
+
+  /* Specific sizing for the two maps */
+  .left-map-wrapper {
+    height: auto; /* Let content drive height */
+    width: var(--left-map-width, 25vw); /* Use variable width */
+    
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+  }
+  
+  .left-map-wrapper img {
+    /* Stack in first cell */
+    grid-area: 1 / 1;
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; 
+    object-fit: contain;
+    /* Align to bottom within the wrapper */
+    align-self: end;
+    margin-bottom: 1.8vw;
+  }
+
+  .right-map-wrapper {
+    height: auto; 
+    width: var(--right-map-width, 40vw); /* Use variable width */
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+  }
+
+  .right-map-wrapper img {
+    grid-area: 1 / 1;
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none;
+    object-fit: contain;
+    align-self: end;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .withTransition {
+    /* This class is added only to the image that is fading out */
+    transition: opacity var(--map-fade-duration, 500ms) ease-in-out;
+  }
+}
+
+@media (orientation: portrait) {
+  .map-container {
+    position: fixed;
+    right: 4%;
+    top: 38%; /* Middle-ish vertical placement */
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 0vw;
+    /* In portrait, we might want slightly different scaling logic */
+  }
+
+  .mapImage {
+    height: auto;
+    width: auto;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .withTransition {
+    transition: opacity var(--map-fade-duration, 500ms) ease-in-out;
+  }
+
+  /* Resize for Portrait width constraints */
+  .left-map-wrapper {
+    height: auto;
+    width: 8vw; /* Slightly wider relative to screen width */
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    margin-bottom: 1.95vw;
+
+  }
+
+  .left-map-wrapper img {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    align-self: end;
+  }
+
+  .right-map-wrapper {
+    height: auto;
+    width: 36vw; /* Fills more of the width */
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+  }
+
+  .right-map-wrapper img {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    align-self: end;
+  }
+}
+

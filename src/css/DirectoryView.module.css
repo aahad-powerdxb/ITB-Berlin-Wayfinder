@@ -1,0 +1,124 @@
+@media (orientation: landscape) {
+  .data-container {
+    letter-spacing: 0.02vw;
+    color: #fcefde;
+    line-height: 1.05;
+    display: flex;
+    margin-top: 1.2vw;
+    column-gap: 2.9vw;
+  }
+
+  /* 3 Column Layout */
+  .first,
+  .second,
+  .third {
+    width: 30%;
+  }
+
+  .first div,
+  .second div,
+  .third div {
+    margin: 0.3vw;
+    display: grid;
+    grid-template-columns: 91% 9%;
+  }
+
+  .link > span:first-child {
+    line-height: 1.1;
+    display: inline-block;
+  }
+
+  .link > span:nth-child(2) {
+    width: 4vw;
+  }
+
+  .link {
+    font-size: 1.07vw;
+    cursor: pointer;
+  }
+
+  .line-text {
+    letter-spacing: 0.1vw;
+    display: inline-block;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding-top: 1vw;
+  }
+}
+
+@media (orientation: portrait) {
+  .data-container {
+    letter-spacing: 0.02vw;
+    color: #fcefde;
+    line-height: 1.05;
+    display: flex;
+    margin-top: -3vw;
+    column-gap: 1.5vw;
+  }
+
+  /* 3 Column Layout for Portrait as well */
+  .first,
+  .second,
+  .third {
+    width: 33%;
+  }
+
+  .first div,
+  .second div,
+  .third div {
+    margin: 0.3vw;
+    display: grid;
+    /* Adjust grid columns for portrait reading */
+    grid-template-columns: 85% 15%; 
+  }
+
+  .first div span,
+  .second div span,
+  .third div span {
+    cursor: pointer;
+  }
+
+  .link > span:first-child {
+    line-height: 1.1;
+    display: inline-block;
+  }
+
+  .line-text {
+    letter-spacing: 0.1vw;
+    display: inline-block;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    font-size: 2vw; /* Larger font for portrait headings */
+    font-weight: bold;
+    padding-top: 1vw;
+  }
+
+  .link {
+    font-size: 1.57vw;
+    cursor: pointer;
+  }
+
+  .portraitGrid {
+    display: flex; /* Flex row for 2 distinct columns */
+    justify-content: space-between;
+    width: 100%;
+    gap: 4vw;
+  }
+
+  .portraitCol1, .portraitCol2 {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+  }
+  
+  /* Ensure the links inside the grid behave */
+  .portraitGrid .link {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+  }
+}
+

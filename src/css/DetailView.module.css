@@ -1,0 +1,265 @@
+/* --- MEDIA QUERIES (Layout Only) --- */
+
+@media (orientation: landscape) {
+  .event-container {
+    width: 100%;
+    height: 40vw;
+    color: #fcefde;
+    margin-top: 3vw;
+    margin-left: 0.65vw;
+  }
+
+  .inner-first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20vw;
+    width: 94.7%;
+    box-sizing: border-box;
+  }
+
+  .inner-first .logoContainer {
+    width: 15vw;
+    height: 15vw;
+    max-width: 20vw;
+    min-width: 15vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcefde;
+    border-radius: 1.5vw;
+    padding: 0.5vw;
+  }
+
+  .logoContainer img {
+    border-radius: 1.5vw;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .inner-first .img-first {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .inner-first video {
+    height: 19vw;
+    border-radius: 1.5vw;
+    background-color: #fcefde;
+  }
+
+  .inner-second p br {
+    margin-top: 1vw;
+  }
+
+  .bgImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19vw;
+    width: auto;
+    min-width: 19vw;
+    padding: 0.5vw;
+    border-radius: 1.5vw;
+    background-color: #fcefde;
+  }
+
+  .inner-first .bgImage img,
+  .bgImage video,
+  .logoContainer img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1.5vw;
+    pointer-events: none;
+  }
+
+  .inner-second {
+    height: 17vw;
+    width: 95%;
+    margin-top: 2.8vw;
+  }
+
+  .inner-second h1 {
+    letter-spacing: 0.1vw;
+    font-size: 2vw;
+    line-height: 1.2;
+    font-family: "AbuDhabiBasis-Bold";
+  }
+
+  /* Landscape specific height */
+  .scroll-container {
+    height: 21vh;
+    max-height: 21vh;
+    padding-right: 3vw;
+  }
+
+  .inner-second p {
+    font-family: "AbuDhabiBasis-Regular";
+    margin-top: 0;
+    font-size: 1.25vw;
+    line-height: 1.8vw;
+    width: 100%;
+  }
+
+  .inner-third {
+    height: 4vw;
+    width: 100%;
+    text-align: right;
+  }
+
+  .inner-third button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 0.3vw;
+    margin-right: 3.8vw;
+  }
+
+  .inner-third button img {
+    width: 6vw;
+  }
+}
+
+@media (orientation: portrait) {
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 47%;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 1vh; 
+    color: #fcefde;
+    gap: 2.2vh;
+    margin-left: -2VW;
+  }
+
+  .inner-first {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    order: 1;
+  }
+
+  .inner-first .logoContainer {
+    width: 25vw;
+    height: 25vw;
+    background-color: #fcefde;
+    border-radius: 3vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoContainer img {
+    border-radius: 3vw;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .bgImage {
+    display: none;
+  }
+
+  .inner-second {
+    width: 100%;
+    text-align: left;
+    height: auto;
+    order: 2;
+    margin-top: 0;
+  }
+
+  .inner-second h1 {
+    font-size: 3vw;
+    font-family: "AbuDhabiBasis-Bold";
+    letter-spacing: 0.1vw;
+    line-height: 1.2;
+  }
+
+  /* Portrait specific height */
+  .scroll-container {
+    height: 18vh;
+    max-height: 18vh;
+    margin-top: 1vh;
+    padding-right: 2vw;
+  }
+
+  .inner-second p {
+    font-size: 1.6vw;
+    line-height: 1.5;
+    font-family: "AbuDhabiBasis-Regular";
+    margin-top: 0;
+  }
+
+  .inner-third {
+    width: 100%;
+    text-align: left;
+    order: 3;
+    height: auto;
+  }
+
+  .inner-third button {
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .inner-third button img {
+    width: 9vw;
+  }
+}
+
+/* --- UNIVERSAL SCROLLBAR FIX --- */
+
+.scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* CRITICAL: Set these to 'auto' or remove them entirely. */
+  /* If these are set to 'thin' or a color, Chrome IGNORES the webkit rules below. */
+  scrollbar-width: auto; 
+  scrollbar-color: auto;
+}
+
+/* --------------------------------------------------------- */
+/* WEBKIT STYLES (Chrome, Edge, Safari)                      */
+/* --------------------------------------------------------- */
+
+/* 1. The Scrollbar Track (Background) */
+.scroll-container::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  background-color: transparent; /* Transparent track */
+}
+
+/* 2. The Thumb (Handle) - Constant Color */
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #fcefde;
+  border-radius: 0;
+}
+
+/* 3. Force Hover/Active to stay the SAME color (No darkening) */
+.scroll-container::-webkit-scrollbar-thumb:hover,
+.scroll-container::-webkit-scrollbar-thumb:active {
+  background-color: #fcefde; 
+}
+
+/* 4. HIDE BUTTONS (Arrows) - The "Nuclear" Fix */
+.scroll-container::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* 5. Hide Corner */
+.scroll-container::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
