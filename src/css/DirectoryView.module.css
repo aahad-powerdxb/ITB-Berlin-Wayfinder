@@ -12,7 +12,7 @@
   .first,
   .second,
   .third {
-    width: 30%;
+    width: 29%;
   }
 
   .first div,
@@ -20,7 +20,7 @@
   .third div {
     margin: 0.3vw;
     display: grid;
-    grid-template-columns: 91% 9%;
+    grid-template-columns: 98% 20%;
   }
 
   .link > span:first-child {
@@ -29,7 +29,7 @@
   }
 
   .link > span:nth-child(2) {
-    width: 4vw;
+    width: auto;
   }
 
   .link {
@@ -81,8 +81,12 @@
   }
 
   .link > span:first-child {
-    line-height: 1.1;
+    line-height: 1.2;
     display: inline-block;
+  }
+
+  .link > span:nth-child(2) {
+    width: 2vw;
   }
 
   .line-text {
@@ -96,7 +100,7 @@
   }
 
   .link {
-    font-size: 1.57vw;
+    font-size: 1.9vw;
     cursor: pointer;
   }
 
@@ -117,7 +121,7 @@
   /* Ensure the links inside the grid behave */
   .portraitGrid .link {
     display: grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 93% 7%;
     align-items: center;
   }
 }

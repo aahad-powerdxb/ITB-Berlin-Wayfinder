@@ -20,7 +20,9 @@ for /L %%p in (3000,1,3010) do (
 if "%PORT%"=="" set PORT=3000
 
 REM Open Chrome in kiosk mode to the dev server URL
-start "" "chrome" "http://localhost:%PORT%/" --new-window --kiosk --disable-pinch
+REM Use a specific/temp user data dir to avoid the profile selection screen
+start "" "chrome" "http://localhost:%PORT%/" --new-window --kiosk --disable-pinch --no-first-run --no-default-browser-check --user-data-dir="%TEMP%\chrome_kiosk_data"
+
 
 REM Try to make the Chrome window topmost so it stays above the terminal windows.
 REM Uses a helper PowerShell script located next to this batch file.

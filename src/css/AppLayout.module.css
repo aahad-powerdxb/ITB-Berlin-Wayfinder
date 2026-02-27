@@ -68,10 +68,6 @@
     opacity: 1; /* Class to make content visible */
   }
 
-  /* Define classes here to ensure export */
-  .content-transitioning {}
-  .video-wrapper {}
-
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -81,7 +77,7 @@
   .video-wrapper {
     position: absolute;
     /* Coordinates derived from previous DetailView layout */
-    top: 11.4vw; 
+    top: 11.46vw; 
     left: 25vw;
     width: 30vw;
     min-width: 30vw;
@@ -136,16 +132,13 @@
   /* Portrait: Video Wrapper is fixed at the bottom */
   .video-wrapper {
     position: fixed;
-    bottom: 3vh;
-    left: 9.5vw;
-    width: 75vw;
-    height: 25vh; /* Adjust height as needed */
-    z-index: 10;
+    top: 19.4vh;
+    right: 5.6vw;
+    width: 48vw;
+    height: 16vh; /* Adjust height as needed */
+    z-index: 1;
 
-    background-color: #fcefde;
-    border: 0.9vw solid #fcefde;
-    border-radius: 2vw;
-    color: #fcefde;
+    background-color: #fcefde00;
   }
 
   /* Inner Global Video handles content size and fading */
@@ -161,6 +154,10 @@
     transition: opacity var(--content-transition-duration, 400ms) ease;
     
     opacity: 1;
+    background-color: #fcefde;
+    border: 0.9vw solid #fcefde;
+    border-radius: 2vw;
+    color: #fcefde00;
   }
 
   /* Fade out INNER content during page transition in portrait */
@@ -188,7 +185,7 @@
     width: 95vw; /* Wider container */
     height: 20vh; /* Restricted height between Map and Video */
     top: 20%; /* Start below the map */
-    left: 6vw; /* Centered-ish */
+    left: 3vw; /* Centered-ish */
     position: absolute;
     font-size: 1.5vw; /* Larger text for portrait */
     z-index: 2;

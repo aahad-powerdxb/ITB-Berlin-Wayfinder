@@ -72,8 +72,8 @@
 @media (orientation: portrait) {
   .map-container {
     position: fixed;
-    right: 4%;
-    top: 38%; /* Middle-ish vertical placement */
+    right: 19%;
+    bottom: 2%; /* Middle-ish vertical placement */
     z-index: 1;
     display: flex;
     align-items: flex-end;
@@ -99,11 +99,11 @@
   /* Resize for Portrait width constraints */
   .left-map-wrapper {
     height: auto;
-    width: 8vw; /* Slightly wider relative to screen width */
+    width: 12vw; /* Slightly wider relative to screen width */
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 100%;
-    margin-bottom: 1.95vw;
+    margin-bottom: 2.61vw;
 
   }
 
@@ -118,7 +118,7 @@
 
   .right-map-wrapper {
     height: auto;
-    width: 36vw; /* Fills more of the width */
+    width: 50vw; /* Fills more of the width */
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 100%;

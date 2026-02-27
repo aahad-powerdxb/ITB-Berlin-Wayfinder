@@ -42,11 +42,11 @@ export const directoryConfig = {
   // Landscape: Define the 3 columns by alphabet ranges
   landscapeColumnRanges: [
     { start: "A", end: "E" },
-    { start: "H", end: "Q" },
-    { start: "R", end: "Z" },
+    { start: "H", end: "R" },
+    { start: "S", end: "Z" },
   ],
   // Portrait: The integer booth number to split the list at.
   // Column 1: <= splitBooth
   // Column 2: > splitBooth
-  portraitSplitBooth: 35,
+  portraitSplitBooth: 18,
 };

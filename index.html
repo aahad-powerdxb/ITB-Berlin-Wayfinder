@@ -3,12 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- <title>Vite + React</title> -->
     <link rel="preconnect" href="/media" crossorigin />
     <link rel="dns-prefetch" href="/media" />
     <meta name="description" content="ATM Wayfinder Application" />
     <title>ATM Wayfinder</title>
+    <style>
+      /* Disable text selection and dragging */
+      body {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        overscroll-behavior: none; /* Prevent bounce scrolling */
+        touch-action: none; /* Disable native touch actions like pinch-zoom */
+      }
+      
+      /* Disable image dragging */
+      img {
+        -webkit-user-drag: none;
+        user-drag: none;
+        pointer-events: none; /* Often helpful for purely decorative images, use cautiously */
+      }
+    </style>
+    <script>
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
+      // Disable keyboard shortcuts that might break kiosk mode
+      document.addEventListener('keydown', (e) => {
+        // Prevent F5, Ctrl+R, Ctrl+Shift+R (Reload)
+        if (e.key === 'F5' || (e.ctrlKey && e.key === 'r') || (e.ctrlKey && e.shiftKey && e.key === 'R')) {
+          e.preventDefault();
+        }
+        // Prevent F11 (Fullscreen toggle - usually handled by browser flags but good backup)
+        if (e.key === 'F11') e.preventDefault();
+        // Prevent Esc (Escape fullscreen)
+        if (e.key === 'Escape') e.preventDefault();
+        // Prevent Ctrl+P (Print)
+        if (e.ctrlKey && e.key === 'p') e.preventDefault();
+        // Prevent Ctrl+S (Save)
+        if (e.ctrlKey && e.key === 's') e.preventDefault();
+        // Prevent Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') e.preventDefault();
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
