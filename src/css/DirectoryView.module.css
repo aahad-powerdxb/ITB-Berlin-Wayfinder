@@ -4,15 +4,16 @@
     color: #fcefde;
     line-height: 1.05;
     display: flex;
-    margin-top: 1.2vw;
-    column-gap: 2.9vw;
+    margin-top: 3vw;
+    column-gap: 6.9vw;
+    margin-left: 4vw;
   }
 
   /* 3 Column Layout */
   .first,
   .second,
   .third {
-    width: 29%;
+    width: 38%;
   }
 
   .first div,
@@ -21,6 +22,10 @@
     margin: 0.3vw;
     display: grid;
     grid-template-columns: 98% 20%;
+  }
+
+  .third {
+    display: none;
   }
 
   .link > span:first-child {
@@ -81,7 +86,7 @@
   }
 
   .link > span:first-child {
-    line-height: 1.2;
+    line-height: 1.4;
     display: inline-block;
   }
 
@@ -100,7 +105,7 @@
   }
 
   .link {
-    font-size: 1.9vw;
+    font-size: 2.4vw;
     cursor: pointer;
   }
 
