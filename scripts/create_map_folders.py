@@ -5,19 +5,19 @@ from pathlib import Path
 def normalize_name(name):
     """
     Normalizes file and folder names so they can be accurately matched.
-    Example: 'Map-lines_03.png' -> '3' | '7 & D' -> '7&d'
+    Example: 'Map-lines_01.png' -> '1' | '13 & A' -> '13&a'
     """
     # Remove prefix and extension if present
     name = name.replace("Map-lines_", "").replace(".png", "")
     # Lowercase and remove any spaces
     name = name.lower().replace(" ", "")
-    # Strip leading zeros (so '03' becomes '3')
+    # Strip leading zeros (so '01' becomes '1')
     name = name.lstrip("0")
     return name
 
 def main():
-    # Define paths
-    source_dir = Path(r"C:\Users\AHAD_PC\Downloads\Map-lines_v2-20260302T125449Z-3-001\Map-lines_v2")
+    # Define paths (Update source_dir if you specifically needed v2 instead of v3)
+    source_dir = Path(r"C:\Users\AHAD_PC\Downloads\Map-lines_v3-20260302T182953Z-3-001\Map-lines_v3")
     maps_dir = Path(r"D:\Sandisk files\wayfinder\public\assets\images\maps")
     maps1_dir = Path(r"D:\Sandisk files\wayfinder\public\assets\images\maps1")
 
