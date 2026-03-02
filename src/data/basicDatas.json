@@ -1,5 +1,11 @@
 [
   {
+    "id": 1,
+    "title": "YAS ISLAND ABU DHABI",
+    "content": "Located on the golden shores of Abu Dhabi - just 20 minutes from downtown Abu Dhabi and 50 minutes from Dubai, Yas Island offers holidaymakers a diverse mix of leisure and entertainment experiences. From award-winning theme parks such as Ferrari World\u2122 Yas Island, Abu Dhabi; Yas Waterworld Yas Island, Abu Dhabi; Warner Bros. World\u2122 Yas Island, Abu Dhabi, and SeaWorld\u00ae Yas Island, Abu Dhabi to incredible attractions such as the record-breaking CLYMB\u2122 Yas Island, Abu Dhabi, and the thrilling Yas Marina Circuit.",
+    "booth": "1"
+  },
+  {
     "id": 2,
     "title": "DESERT ADVENTURES TOURISM",
     "content": "For over 25 years, Desert Adventures has been a premier DMC partner to tour operators worldwide, by offering superior destination solutions for FIT, VIP, and Leisure Group travel in the Middle East. Moreover, we work closely with Abu Dhabi’s Tourism board to develop comprehensive tourism products for the destination.",
@@ -42,6 +48,12 @@
     "booth": "8"
   },
   {
+    "id": 9,
+    "title": "QASR AL WATAN",
+    "content": "Qasr Al Watan is a working Presidential palace in Abu Dhabi and a majestic cultural landmark that invites you to discover the rich legacy of knowledge and tradition that has shaped the UAE's journey. More than just a traditional palace, Qasr Al Watan boosts cultural understanding of the nation and emphasizes its incredible history. The palace stands as an icon of Abu Dhabi's skyline with a design exquisitely crafted to tribute to its Arabian heritage and artistry. You will feel the grandeur as you enter the grounds, and the structure and open halls echo its significance in Emirati culture.",
+    "booth": "9"
+  },
+  {
     "id": 10,
     "title": "RIXOS PREMIUM<br>SAADIYAT ISLAND",
     "content": "Escape to Rixos Premium Saadiyat Island, a luxurious all-inclusive retreat in Abu Dhabi. Nestled on pristine Saadiyat Island, the resort offers crystal-clear Arabian Sea views, exceptional service, and world-class amenities. Guests enjoy a rich culinary journey across acclaimed restaurants and unwind with refreshing drinks at elegant bars and lounges—poolside, beachside, or indoors. It's the perfect blend of relaxation, indulgence, and natural beauty.",
@@ -54,16 +66,40 @@
     "booth": "11"
   },
   {
+    "id": 12,
+    "title": "HOLIDAY INN ABU DHABI",
+    "content": "Holiday Inn® Abu Dhabi offers business and leisure travelers dependability, friendly services and modern, attractive facilities at an excellent value in a convenient location. We provide innovative comfort to guests, whether on business or leisure. We take great pride in our work, and our sincerest hope is that it makes each one of our customers happy. Our hotel uses the IHG® Green Engage system, an innovative online environmental sustainability system that gives our hotel the means to manage our impact on the environment.",
+    "booth": "12"
+  },
+  {
     "id": 13,
     "title": "SAADIYAT CULTURAL DISTRICT",
     "content": "Saadiyat Cultural District Abu Dhabi is a unique constellation of museums, cultural institutions, collections and public programming that celebrate the achievements of the United Arab Emirates, the region and the world. Saadiyat Cultural District is a centre for innovation and creativity, research and knowledge and a place to encounter. Offering one of the highest concentrations of cultural experiences, Saadiyat Cultural District is the home of Zayed National Museum, Natural History Museum Abu Dhabi, Louvre Abu Dhabi, teamLab Phenomena Abu Dhabi and the future home of Guggenheim Abu Dhabi.",
-    "booth": "A"
+    "booth": "13 & A"
+  },
+  {
+    "id": 14,
+    "title": "CONRAD ABU DHABI<br>ETIHAD TOWERS",
+    "content": "Conrad Abu Dhabi Etihad Towers is a luxury urban resort and culinary destination, home to over 12 world-class dining venues, a luxurious spa with 13 treatment rooms, a private beach, three swimming pools, and the Observation Deck at 300, offering breathtaking 360-degree views of the city from the 74th floor. Stay inspired in its 576 elegant rooms, suites, and residences, all with spectacular views of the Arabian Gulf. The resort is just minutes from the Presidential Palace, setting the standard for luxury hospitality and extraordinary experiences.",
+    "booth": "14"
   },
   {
     "id": 15,
     "title": "MASARRA DESTINATION<br>MANAGEMENT COMPANY",
     "content": "Masarra is a full-service Destination Management Company focused on curating a unique portfolio of experiences in Abu Dhabi and the UAE. With a team of destination experts passionate about the region’s offerings, we specialise in creating tailored destination experiences, MICE offerings, and adventure activities that leave lasting impressions.",
     "booth": "15"
+  },
+  {
+    "id": 16,
+    "title": "TEAMLAB PHENOMENA<br>ABU DHABI",
+    "content": "TeamLab Phenomena Abu Dhabi showcases groundbreaking artworks by the international art collective teamLab. The installations are inspired by the balance between nature, the manufactured world, and the environment.<br><br>These living, evolving creations are shaped not only by natural forces but also by your interaction and engagement. Immerse yourself in these artworks and become one with the environment.<br><br>Situated in Saadiyat Cultural District, Abu Dhabi. It offers you a mind-blowing expedition that is different for each visitor and changes every time you visit.",
+    "booth": "16"
+  },
+  {
+    "id": 17,
+    "title": "ABU DHABI AIRPORTS",
+    "content": "Zayed International Airport (AUH), is the airport of the future, poised to welcome up to 45 million passengers annually and up to 11,000 passengers per hour, with a world first, nine biometric touchpoints by 2025, a journey that is set to transform the way we travel, forever.<br><br>The airport houses one of the largest environmental art pieces in the region, emphasizing the importance of passenger well-being, speed of kerb-to-gate journey and an array of retail, F&B and in-airport hotel options that ensures passengers travel relaxed and rejuvenated.",
+    "booth": "17"
   },
   {
     "id": 18,
@@ -102,6 +138,24 @@
     "booth": "23"
   },
   {
+    "id": 24,
+    "title": "BAB AL QASR<br>HOTEL & RESIDENCES",
+    "content": "BAB AL QASR, meaning “door of the palace,” reflects its heritage through a striking Arabic doorway and gleaming copper-toned architecture. Inspired by Arabian culture, the hotel features Bedouin-style accents, Islamic geometric patterns, and a palm-filled lobby with a falaj-inspired water feature. This five-star hotel is located on the west end of Abu Dhabi and opened in late 2016. It is 38 km from Abu Dhabi International Airport and 90 minutes from Dubai. Bab Al Qasr offers 412 hotel rooms and suites and 265 serviced residences with luxurious modern design and stunning views of the Presidential Palace, Corniche, and Arabian Gulf.",
+    "booth": "24"
+  },
+  {
+    "id": 25,
+    "title": "THE ABU DHABI EDITION",
+    "content": "The ABU DHABI EDITION brings the only luxury lifestyle hotel to the region. A contemporary and trend-setting hotel, with a unique hospitality concept. The ABU DHABI EDITION will be host to spectacular and eye-catching designs in the heart of Abu Dhabi. Locally groundbreaking dining and bar concepts, state-of-the-art meeting venues, and recreational facilities to keep all guests pampered or occupied in beautiful yet fuss-free surroundings. Guest engagement is seamless and interactive through a passionate service philosophy. The experience will carry through our sophisticated yet stimulating designs which will create an overall magical and lasting experience.",
+    "booth": "25"
+  },
+  {
+    "id": 26,
+    "title": "YAS PLAZA HOTELS",
+    "content": "Across the heart of Yas Island, six hotels come together to create stays that feel personal, meaningful, and unhurried, with theme park access included in every stay. Each hotel has its own atmosphere, from calm and grounding to bold and lively, giving every guest space that suits their pace and purpose. From sea breeze mornings to adventure filled days and vibrant evenings, Yas Plaza Hotels is where experiences unfold naturally. Nothing feels forced. Everything feels easy. Moments linger long after you leave.",
+    "booth": "26"
+  },
+  {
     "id": 27,
     "title": "EXPERIENCE ABU DHABI",
     "content": "Discover Abu Dhabi, the capital of the United Arab Emirates, where rich cultural heritage meets cutting-edge innovation. An unparalleled destination offering spans iconic landmarks, stunning natural landscapes, award-winning attractions, exciting gastronomy, and world-class entertainment and business events. In a place where vibrant culture meets economic opportunity, we connect global partners with the region’s dynamic growth story. Partner with us and unlock unrivalled access, immersive experiences and meaningful collaborations in a thriving gateway to the Middle East and beyond.",
@@ -118,6 +172,12 @@
     "title": "ODYSSEY",
     "content": "With over 42 years of industry expertise, we are a Destination Management Company (DMC) built on excellence, precision, and global reach. Since our inception in 1983, we’ve evolved into a trusted name in destination management with a presence spanning 140+ offices across 80+ countries, all coordinated from our global headquarters in Dubai.<br><br>We specialize in more than just travel — we deliver custom-designed, scalable, and cost-effective solutions for corporate clients, MICE programs, and institutional groups. From logistics and local operations to experiential programming and event management, we ensure every detail is executed with purpose and professionalism.",
     "booth": "29"
+  },
+  {
+    "id": 30,
+    "title": "PARK HYATT ABU DHABI HOTEL AND VILLAS",
+    "content": "Park Hyatt Abu Dhabi Hotel and Villas are the luxury haven of choice for discerning travelers on Saadiyat Island—where understated sophistication meets authentic Arabian hospitality. Tailored for global travelers, affluent leaders, and leisure seekers, the resort offers a distinctive blend of tranquility, cultural richness, and personalized service. From expansive beachfront villas and immersive wellness offerings to award-winning dining, every touchpoint reflects unparalleled excellence. More than a destination, Park Hyatt Abu Dhabi embodies refined hospitality through thoughtful details and a home away from home experience that ensures a seamless, memorable stay.",
+    "booth": "30"
   },
   {
     "id": 31,
