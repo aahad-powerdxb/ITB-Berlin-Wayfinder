@@ -3,19 +3,15 @@ import ListItem from "./ListItem";
 import styles from "../css/DirectoryView.module.css";
 
 function Column({ groupedData, startLetter, endLetter, className, onItemClick }) {
-  // Get all items for this column's letter range
   const columnItems = useMemo(() => {
     const items = [];
+    // Get all available starting letters from the data and sort them
     const letters = Object.keys(groupedData).sort();
     
-    // Find start and end indices in the letters array
-    const startIndex = letters.indexOf(startLetter);
-    const endIndex = letters.indexOf(endLetter);
-    
-    // If valid range, collect all items
-    if (startIndex !== -1 && endIndex !== -1) {
-      for (let i = startIndex; i <= endIndex; i++) {
-        const letter = letters[i];
+    // Check each available letter against our alphabetical range
+    letters.forEach(letter => {
+      // As long as the letter falls alphabetically between startLetter and endLetter
+      if (letter >= startLetter && letter <= endLetter) {
         items.push(
           // Add letter heading
           <div key={`heading-${letter}`} className={styles["line-text"]}>
@@ -31,7 +27,7 @@ function Column({ groupedData, startLetter, endLetter, className, onItemClick })
           ))
         );
       }
-    }
+    });
     
     return items;
   }, [groupedData, startLetter, endLetter, onItemClick]);

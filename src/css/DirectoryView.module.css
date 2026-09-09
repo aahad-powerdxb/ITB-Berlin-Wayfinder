@@ -5,35 +5,40 @@
     line-height: 1.05;
     display: flex;
     margin-top: 1.2vw;
-    column-gap: 2.9vw;
+    column-gap: 3.0vw;
   }
 
   /* 3 Column Layout */
   .first,
   .second,
-  .third {
-    width: 29%;
+  .third,
+  .fourth {
+    width: 21.5%; /* Reduced from 29% to fit 4 columns */
   }
 
   .first div,
   .second div,
-  .third div {
-    margin: 0.3vw;
+  .third div,
+  .fourth div {
+    margin: 0.28vw;
     display: grid;
-    grid-template-columns: 98% 20%;
+    /* 1fr gives the name remaining space, auto sizes the number perfectly */
+    grid-template-columns: 1fr auto; 
+    column-gap: 1vw; /* Prevents long names from touching the numbers */
   }
 
   .link > span:first-child {
-    line-height: 1.1;
+    line-height: 1.06;
     display: inline-block;
   }
 
   .link > span:nth-child(2) {
     width: auto;
+    text-align: right; /* Forces the number to the right */
   }
 
   .link {
-    font-size: 1.07vw;
+    font-size: 0.76vw;
     cursor: pointer;
   }
 
@@ -42,9 +47,9 @@
     display: inline-block;
     margin-top: 0.5vw;
     margin-bottom: 0.5vw;
-    font-size: 1.5vw;
+    font-size: 1.1vw;
     font-weight: bold;
-    padding-top: 1vw;
+    padding-top: 0.85vw;
   }
 }
 
@@ -54,7 +59,7 @@
     color: #fcefde;
     line-height: 1.05;
     display: flex;
-    margin-top: -3vw;
+    margin-top: 0vw;
     column-gap: 1.5vw;
   }
 
@@ -104,24 +109,19 @@
     cursor: pointer;
   }
 
-  .portraitGrid {
-    display: flex; /* Flex row for 2 distinct columns */
-    justify-content: space-between;
-    width: 100%;
-    gap: 4vw;
-  }
-
-  .portraitCol1, .portraitCol2 {
-    width: 48%;
+  /* Portrait Single Column */
+  .portraitSingleColumn {
     display: flex;
     flex-direction: column;
-    gap: 0.5vw;
+    width: 100%;
   }
   
-  /* Ensure the links inside the grid behave */
-  .portraitGrid .link {
+  .portraitSingleColumn .link {
     display: grid;
-    grid-template-columns: 93% 7%;
+    grid-template-columns: 90% 15%; 
     align-items: center;
+    margin-bottom: 0.4vw; /* Drastically reduced margin */
+    font-size: 1.6vw; /* Reduced font size */
+    cursor: pointer;
   }
 }

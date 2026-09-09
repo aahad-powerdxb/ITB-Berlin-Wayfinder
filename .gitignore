@@ -144,3 +144,5 @@ _*.scss
 
 # System files
 .DS_Store
+
+public/assets/media_new

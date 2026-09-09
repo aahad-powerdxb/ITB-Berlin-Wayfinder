@@ -26,9 +26,9 @@ export const assetPaths = {
 // Configuration for layout dimensions (in VW units)
 export const layoutConfig = {
   // Width of the main (right) map in VW
-  rightMapWidthVW: 33,
+  rightMapWidthVW: 22.8,
   // Width of the secondary (left) map in VW
-  leftMapWidthVW: 8,
+  leftMapWidthVW: 0,
   // Gap between maps in VW
   mapGapVW: 0,
   // Right margin of the entire map container in VW
@@ -41,8 +41,9 @@ export const layoutConfig = {
 export const directoryConfig = {
   // Landscape: Define the 3 columns by alphabet ranges
   landscapeColumnRanges: [
-    { start: "A", end: "E" },
-    { start: "H", end: "R" },
+    { start: "A", end: "D" },
+    { start: "E", end: "J" },
+    { start: "K", end: "R" },
     { start: "S", end: "Z" },
   ],
   // Portrait: The integer booth number to split the list at.

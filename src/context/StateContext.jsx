@@ -45,50 +45,37 @@ const stateReducer = (state, action) => {
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
-  const groupedData = useMemo(() => {
-    return groupItemsAlphabetically(basicDatas);
+  // 1. Intercept data and safely uppercase titles while ignoring HTML tags
+  const processedDatas = useMemo(() => {
+    return basicDatas.map((item) => {
+      if (typeof item.title === "string") {
+        const upperTitle = item.title.replace(/(^|>)([^<]+)(<|$)/g, (match, p1, p2, p3) => {
+          return p1 + p2.toUpperCase() + p3;
+        });
+        return { ...item, title: upperTitle };
+      }
+      return item;
+    });
   }, []);
 
-  // New logic: Sort flat list by booth number, duplicating "&" entries
+  // 2. Use processedDatas instead of basicDatas
+  const groupedData = useMemo(() => {
+    return groupItemsAlphabetically(processedDatas);
+  }, [processedDatas]);
+
+  // 3. Use processedDatas instead of basicDatas for booth sorting
   const boothSortedData = useMemo(() => {
     const processed = [];
     
-    basicDatas.forEach(item => {
+    processedDatas.forEach(item => {
       const boothStr = String(item.booth);
       if (boothStr.includes(" & ")) {
         const parts = boothStr.split(" & ");
         parts.forEach((part, index) => {
-          // Clone item, modify booth to just this part
-          // Generate unique ID to prevent key conflicts in lists
           processed.push({
             ...item,
             id: `${item.id}_split_${index}`,
             booth: part.trim(),
-            // Keep original ID for media lookup? Yes, media uses folder based on original ID.
-            // But App.jsx uses data.id for folder lookup.
-            // If we change ID, media lookup fails!
-            // Solution: Keep original ID in a separate field 'originalId' or rely on folder naming convention?
-            // Actually, we should probably preserve the 'id' if the folder name depends on it.
-            // But React needs unique keys.
-            // Let's assume ListItem uses `id` for key but App uses it for media.
-            // We must preserve the REAL id for media lookup.
-            // Let's add a `uniqueKey` field for React, and keep `id` intact?
-            // No, ListItem uses `key={data.id}`.
-            // If we change `id`, `App.jsx` handleClick(data) will pass the NEW id.
-            // `folder: .../media/${data.id}` -> `/media/123_split_0`. This folder doesn't exist!
-            
-            // Hack: We need to ensure App.jsx uses the ORIGINAL id for media.
-            // Let's store the real ID in `mediaId` and fallback to `id`?
-            // Or better: Use the original ID for logic, but append a suffix for the unique key.
-            // But we can't change the structure of `data` expected by `ListItem`.
-            
-            // Cleanest Solution:
-            // Modify App.jsx to handle this split ID.
-            // OR: Keep `id` as original, but ensure `ListItem` uses a combined key?
-            // `ListItem` uses `key={data.id}`. We MUST make `id` unique.
-            
-            // So `id` becomes `123_split_0`.
-            // App.jsx `handleClick` must strip the suffix before media lookup.
           });
         });
       } else {
@@ -97,12 +84,11 @@ export const StateProvider = ({ children }) => {
     });
 
     return processed.sort((a, b) => {
-      // Handle numeric and string booth numbers (e.g. "10", "10A")
       const boothA = String(a.booth).toUpperCase();
       const boothB = String(b.booth).toUpperCase();
       return boothA.localeCompare(boothB, undefined, { numeric: true, sensitivity: 'base' });
     });
-  }, []);
+  }, [processedDatas]);
 
   const columnRanges = useMemo(() => {
     return directoryConfig.landscapeColumnRanges;

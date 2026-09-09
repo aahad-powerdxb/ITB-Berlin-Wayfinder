@@ -203,15 +203,13 @@ function App() {
   if (selectedData) {
     globalVideoFolder = mediaState.folder;
   }
-  //  else if (isPortrait) {
-  //   globalVideoFolder = mediaConfig.defaultLoopFolder;
-  // }
+   else if (isPortrait) {
+    globalVideoFolder = mediaConfig.defaultLoopFolder;
+  }
 
   // console.log(`[App] Portrait: ${isPortrait}, Selected: ${selectedData}, Video: ${globalVideoFolder}`);
 
-    // Determine visibility class logic
-  // Only hide the video if we are in Landscape mode AND (no event is selected OR content is fading out).
-  // In Portrait mode, the video is always visible (either loop or event).
+  // Determine visibility class logic
   const hideVideo = (!selectedData || !isContentVisible);
 
   // Determine the correct transition duration for the current state (in or out)

@@ -2,7 +2,7 @@
   .map-container {
     position: fixed;
     right: 0%;
-    bottom: 1%; /* Anchor to bottom */
+    bottom: 0%; /* Anchor to bottom */
     top: auto;  /* Override previous top positioning */
     z-index: 1;
     display: flex; /* Use Flexbox for side-by-side layout */
@@ -72,13 +72,15 @@
 @media (orientation: portrait) {
   .map-container {
     position: fixed;
-    right: 19%;
-    bottom: 2%; /* Middle-ish vertical placement */
+    top: 18.5vh; /* Align with bottom-container */
+    right: 4vw;
+    bottom: auto; /* Clear any previous anchor */
+    width: 45vw; /* Right side space */
+    height: 52vh;
     z-index: 1;
     display: flex;
-    align-items: flex-end;
-    gap: 0vw;
-    /* In portrait, we might want slightly different scaling logic */
+    flex-direction: column;
+    align-items: flex-end; /* Push maps to the right edge */
   }
 
   .mapImage {
@@ -118,7 +120,7 @@
 
   .right-map-wrapper {
     height: auto;
-    width: 50vw; /* Fills more of the width */
+    width: 38vw; /* Fills more of the width */
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 100%;

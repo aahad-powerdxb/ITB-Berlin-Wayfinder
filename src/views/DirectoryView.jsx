@@ -90,34 +90,11 @@ const DirectoryView = ({ onItemClick }) => {
     <div>
       <div className={styles["data-container"]}>
         {isPortrait ? (
-          /* Portrait Layout: 2 Columns Split by Booth Number logic */
-          /* Col 1: Integers 1-30 */
-          /* Col 2: Integers 31+ AND any alphanumeric (e.g. "17 & B") */
-          <div className={styles.portraitGrid}>
-             <div className={styles.portraitCol1}>
-                {boothSortedData
-                  .filter(d => {
-                    const b = String(d.booth);
-                    // Check if strictly integer and <= split point
-                    return /^\d+$/.test(b) && parseInt(b, 10) <= directoryConfig.portraitSplitBooth;
-                  })
-                  .map(data => (
-                    <ListItem key={data.id} data={data} onClick={onItemClick} />
-                  ))
-                }
-             </div>
-             <div className={styles.portraitCol2}>
-                {boothSortedData
-                  .filter(d => {
-                    const b = String(d.booth);
-                    // Check if NOT (strictly integer <= split point)
-                    return !(/^\d+$/.test(b) && parseInt(b, 10) <= directoryConfig.portraitSplitBooth);
-                  })
-                  .map(data => (
-                    <ListItem key={data.id} data={data} onClick={onItemClick} />
-                  ))
-                }
-             </div>
+          /* Portrait Layout: Single Column Scrollable List */
+          <div className={styles.portraitSingleColumn}>
+            {boothSortedData.map((data) => (
+              <ListItem key={data.id} data={data} onClick={onItemClick} />
+            ))}
           </div>
         ) : (
           /* Landscape Layout: 3 Columns by Alphabet */
@@ -141,6 +118,13 @@ const DirectoryView = ({ onItemClick }) => {
               startLetter={columnRanges[2].start}
               endLetter={columnRanges[2].end}
               className={styles.third}
+              onItemClick={onItemClick}
+            />
+            <Column
+              groupedData={groupedData}
+              startLetter={columnRanges[3].start} /* New 4th Range */
+              endLetter={columnRanges[3].end}
+              className={styles.fourth} /* New CSS Class */
               onItemClick={onItemClick}
             />
           </>

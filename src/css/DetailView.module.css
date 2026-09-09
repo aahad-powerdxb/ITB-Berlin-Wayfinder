@@ -92,7 +92,7 @@
   /* Landscape specific height */
   .scroll-container {
     height: 19vh;
-    padding-right: 3vw;
+    padding-right: 0vw;
   }
 
   .inner-second p {
@@ -126,14 +126,14 @@
   .event-container {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    width: 97%;
+    align-items: flex-start; /* Changed from 'left' to valid flex property */
+    width: 100%; /* Now safely matches parent container perfectly */
     height: auto;
     box-sizing: border-box;
     margin-top: 1vh; 
     color: #fcefde;
     gap: 1.7vh;
-    margin-left: 1vw;
+    margin-left: 0; /* REMOVED: 1vw margin causing the overflow */
   }
 
   .inner-first {
@@ -184,7 +184,7 @@
 
   /* Portrait specific height */
   .scroll-container {
-    height: 12vh;
+    height: 25vh;
     /* max-height: 7vh; */
     margin-top: 1vh;
     padding-right: 2vw;
@@ -220,45 +220,47 @@
 
 .scroll-container {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Hides the horizontal scrollbar */
+  padding-right: 2vw; /* Ensure space for the scrollbar */
   
-  /* CRITICAL: Set these to 'auto' or remove them entirely. */
-  /* If these are set to 'thin' or a color, Chrome IGNORES the webkit rules below. */
-  scrollbar-width: auto; 
-  scrollbar-color: auto;
+  /* Add the Fade-Out Effect at the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 /* --------------------------------------------------------- */
 /* WEBKIT STYLES (Chrome, Edge, Safari)                      */
 /* --------------------------------------------------------- */
 
-/* 1. The Scrollbar Track (Background) */
 .scroll-container::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-  background-color: transparent; /* Transparent track */
+  width: 0.3vw; /* Matches the directory list scrollbar */
+  background-color: transparent; 
 }
 
-/* 2. The Thumb (Handle) - Constant Color */
+.scroll-container::-webkit-scrollbar-track {
+  background: rgba(252, 239, 222, 0.3); /* Faint track */
+  border-radius: 1vw;
+}
+
 .scroll-container::-webkit-scrollbar-thumb {
-  background-color: #fcefde;
-  border-radius: 0;
+  background: #fcefde; /* Solid thumb */
+  border-radius: 1vw;
 }
 
-/* 3. Force Hover/Active to stay the SAME color (No darkening) */
+/* Force Hover/Active to stay the SAME color */
 .scroll-container::-webkit-scrollbar-thumb:hover,
 .scroll-container::-webkit-scrollbar-thumb:active {
   background-color: #fcefde; 
 }
 
-/* 4. HIDE BUTTONS (Arrows) - The "Nuclear" Fix */
+/* HIDE BUTTONS (Arrows) */
 .scroll-container::-webkit-scrollbar-button {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
 }
 
-/* 5. Hide Corner */
+/* Hide Corner */
 .scroll-container::-webkit-scrollbar-corner {
   background-color: transparent;
 }

@@ -49,9 +49,9 @@
   }
 
   .bottom-container {
-    width: var(--content-width, 85vw); /* Use calculated width */
+    width: var(--content-width, 90vw); /* Use calculated width */
     height: 48vw;
-    top: 10%;
+    top: 7%;
     left: 0;
     padding: 2vw;
     position: absolute;
@@ -77,8 +77,8 @@
   .video-wrapper {
     position: absolute;
     /* Coordinates derived from previous DetailView layout */
-    top: 11.46vw; 
-    left: 25vw;
+    top: 10.66vw; 
+    left: 42vw;
     width: 30vw;
     min-width: 30vw;
     height: 30vh;
@@ -132,12 +132,13 @@
   /* Portrait: Video Wrapper is fixed at the bottom */
   .video-wrapper {
     position: fixed;
-    top: 19.4vh;
-    right: 5.6vw;
-    width: 48vw;
-    height: 16vh; /* Adjust height as needed */
+    bottom: 3vh; 
+    top: auto; 
+    left: 15.5vw; /* Changed from 4.1vw to perfectly center the 90vw box */
+    width: 68vw; 
+    height: auto; /* Remove the fixed vh height */
+    aspect-ratio: 16 / 9; /* Force a perfect 16:9 dimension */
     z-index: 1;
-
     background-color: #fcefde00;
   }
 
@@ -181,17 +182,49 @@
     pointer-events: auto;
   }
   
-  .bottom-container {
-    width: 95vw; /* Wider container */
-    height: 20vh; /* Restricted height between Map and Video */
-    top: 20%; /* Start below the map */
-    left: 3vw; /* Centered-ish */
+.bottom-container {
+    width: 52vw; 
+    height: 52vh; 
+    top: 20vh; 
+    left: 4vw; 
     position: absolute;
-    font-size: 1.5vw; /* Larger text for portrait */
+    font-size: 1.5vw; 
     z-index: 2;
     opacity: 0;
     transition: opacity var(--content-transition-duration, 400ms) ease-in-out;
     color: #fcefde;
+    
+    /* ADD THIS LINE */
+    box-sizing: border-box;
+    
+    /* Enable Scrolling */
+    overflow-y: auto; 
+    padding-right: 2vw;
+
+    /* 1. Add the Fade-Out Effect at the bottom */
+    /* This creates a gradient mask that turns transparent at the last 15% of the container */
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  }
+
+  /* 2. Webkit Custom Scrollbar (Ensure NO `scrollbar-width` is used on .bottom-container) */
+  .bottom-container::-webkit-scrollbar {
+    width: 0.3vw;
+    /* Adding a background here ensures the OS doesn't override the track */
+    background-color: transparent; 
+  }
+
+  .bottom-container::-webkit-scrollbar-track {
+    /* Increased opacity slightly (0.3) so the faint color is more visible */
+    background: rgba(252, 239, 222, 0.3); 
+    border-radius: 1vw;
+  }
+
+  .bottom-container::-webkit-scrollbar-thumb {
+    background: #fcefde; /* Solid thumb */
+    border-radius: 1vw;
+    /* Forces the thumb to remain fully opaque even when not scrolling */
+    opacity: 1; 
   }
 
   .contentVisible {
